@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aureon — Operational Infrastructure for Appointment Businesses</title>
+  <meta name="description" content="Aureon automates scheduling, confirmations, and communication so your business runs without front-desk overload.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M12 4l-8 8h5v8h6v-8h5z"/>
+    </svg>
+  </button>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="logo-text">Aureon</div>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">Aureon</a>
+    <div class="nav-links">
+      <a href="#how-it-works">How It Works</a>
+      <a href="#solution">Solutions</a>
+      <a href="#healthcare">Healthcare</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+      <a href="#" class="btn-demo" onclick="openModal(event)">Book a Demo</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#how-it-works" onclick="closeMenu()">How It Works</a>
+    <a href="#solution" onclick="closeMenu()">Solutions</a>
+    <a href="#healthcare" onclick="closeMenu()">Healthcare</a>
+    <a href="#pricing" onclick="closeMenu()">Pricing</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#" class="btn-demo" onclick="openModal(event); closeMenu();">Book a Demo</a>
+  </div>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="hero" class="section-dark">
+    <div class="bg-blobs">
+      <div class="bg-blob"></div>
+      <div class="bg-blob"></div>
+      <div class="bg-blob"></div>
+    </div>
+    <div class="liquid-lines">
+      <div class="liquid-line"></div>
+      <div class="liquid-line"></div>
+      <div class="liquid-line"></div>
+      <div class="liquid-line"></div>
+    </div>
+    <canvas id="hero-canvas"></canvas>
+    <div class="container">
+      <div class="hero-glass-wrapper">
+        <p class="accent-label reveal">OPERATIONAL INFRASTRUCTURE</p>
+        <h1 class="reveal reveal-d1">Your Front Desk<br>Runs Itself.</h1>
+        <p class="sub-text reveal reveal-d2">Aureon automates scheduling, confirmations, and patient communication — so your team focuses on what matters and your revenue stays protected.</p>
+        <div class="hero-ctas reveal reveal-d3">
+          <a href="#" class="btn-demo" onclick="openModal(event)">Book a Demo</a>
+          <a href="#how-it-works" class="btn-outline">See How It Works</a>
+        </div>
+      </div>
+      <div class="hero-line" id="heroLine"></div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="arrow"></div>
+    </div>
+  </section>
+
+  <!-- ==================== PROBLEM SECTION ==================== -->
+  <section id="problem" class="section-light">
+    <div class="ai-line-art-visible">
+      <svg viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="problemGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgba(160,125,63,0.25)"/>
+            <stop offset="50%" style="stop-color:rgba(139,92,246,0.15)"/>
+            <stop offset="100%" style="stop-color:rgba(74,158,255,0.2)"/>
+          </linearGradient>
+          <linearGradient id="problemGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:rgba(160,125,63,0.2)"/>
+            <stop offset="100%" style="stop-color:rgba(74,158,255,0.15)"/>
+          </linearGradient>
+        </defs>
+        <g class="neural-flow">
+          <circle cx="50" cy="150" r="6" fill="rgba(160,125,63,0.2)" class="pulse-node"/>
+          <circle cx="50" cy="300" r="8" fill="rgba(160,125,63,0.25)" class="pulse-node" style="animation-delay: -1s"/>
+          <circle cx="50" cy="450" r="5" fill="rgba(160,125,63,0.15)" class="pulse-node" style="animation-delay: -2s"/>
+          <circle cx="50" cy="600" r="7" fill="rgba(160,125,63,0.2)" class="pulse-node" style="animation-delay: -0.5s"/>
+          <circle cx="180" cy="200" r="10" fill="rgba(139,92,246,0.2)" class="pulse-node" style="animation-delay: -0.5s"/>
+          <circle cx="180" cy="380" r="7" fill="rgba(139,92,246,0.15)" class="pulse-node" style="animation-delay: -1.5s"/>
+          <circle cx="180" cy="520" r="9" fill="rgba(139,92,246,0.18)" class="pulse-node" style="animation-delay: -2.5s"/>
+          <circle cx="320" cy="150" r="8" fill="rgba(74,158,255,0.2)" class="pulse-node" style="animation-delay: -0.8s"/>
+          <circle cx="320" cy="320" r="12" fill="rgba(160,125,63,0.2)" class="pulse-node" style="animation-delay: -1.2s"/>
+          <circle cx="320" cy="480" r="6" fill="rgba(74,158,255,0.15)" class="pulse-node" style="animation-delay: -2.2s"/>
+          <path d="M50,150 Q115,160 180,200" stroke="url(#problemGrad1)" stroke-width="1.5" fill="none" class="flow-line"/>
+          <path d="M50,300 Q115,240 180,200" stroke="url(#problemGrad1)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -1s"/>
+          <path d="M50,300 Q115,340 180,380" stroke="url(#problemGrad1)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -0.5s"/>
+          <path d="M50,450 Q115,420 180,380" stroke="url(#problemGrad1)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -1.5s"/>
+          <path d="M50,450 Q115,490 180,520" stroke="url(#problemGrad1)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -2s"/>
+          <path d="M50,600 Q115,560 180,520" stroke="url(#problemGrad1)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -2.5s"/>
+          <path d="M180,200 Q250,160 320,150" stroke="url(#problemGrad2)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -0.3s"/>
+          <path d="M180,200 Q250,260 320,320" stroke="url(#problemGrad2)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -0.8s"/>
+          <path d="M180,380 Q250,350 320,320" stroke="url(#problemGrad2)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -1.3s"/>
+          <path d="M180,380 Q250,430 320,480" stroke="url(#problemGrad2)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -1.8s"/>
+          <path d="M180,520 Q250,500 320,480" stroke="url(#problemGrad2)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -2.3s"/>
+        </g>
+        <g class="neural-flow">
+          <circle cx="1350" cy="150" r="6" fill="rgba(160,125,63,0.2)" class="pulse-node" style="animation-delay: -0.3s"/>
+          <circle cx="1350" cy="300" r="8" fill="rgba(160,125,63,0.25)" class="pulse-node" style="animation-delay: -1.3s"/>
+          <circle cx="1350" cy="450" r="5" fill="rgba(160,125,63,0.15)" class="pulse-node" style="animation-delay: -2.3s"/>
+          <circle cx="1350" cy="600" r="7" fill="rgba(160,125,63,0.2)" class="pulse-node" style="animation-delay: -0.8s"/>
+          <circle cx="1220" cy="200" r="10" fill="rgba(139,92,246,0.2)" class="pulse-node" style="animation-delay: -0.8s"/>
+          <circle cx="1220" cy="380" r="7" fill="rgba(139,92,246,0.15)" class="pulse-node" style="animation-delay: -1.8s"/>
+          <circle cx="1220" cy="520" r="9" fill="rgba(139,92,246,0.18)" class="pulse-node" style="animation-delay: -2.8s"/>
+          <circle cx="1080" cy="150" r="8" fill="rgba(74,158,255,0.2)" class="pulse-node" style="animation-delay: -1.1s"/>
+          <circle cx="1080" cy="320" r="12" fill="rgba(160,125,63,0.2)" class="pulse-node" style="animation-delay: -1.5s"/>
+          <circle cx="1080" cy="480" r="6" fill="rgba(74,158,255,0.15)" class="pulse-node" style="animation-delay: -2.5s"/>
+          <path d="M1350,150 Q1285,160 1220,200" stroke="url(#problemGrad1)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -0.2s"/>
+          <path d="M1350,300 Q1285,240 1220,200" stroke="url(#problemGrad1)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -1.2s"/>
+          <path d="M1350,300 Q1285,340 1220,380" stroke="url(#problemGrad1)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -0.7s"/>
+          <path d="M1350,450 Q1285,420 1220,380" stroke="url(#problemGrad1)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -1.7s"/>
+          <path d="M1350,450 Q1285,490 1220,520" stroke="url(#problemGrad1)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -2.2s"/>
+          <path d="M1350,600 Q1285,560 1220,520" stroke="url(#problemGrad1)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -2.7s"/>
+          <path d="M1220,200 Q1150,160 1080,150" stroke="url(#problemGrad2)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -0.5s"/>
+          <path d="M1220,200 Q1150,260 1080,320" stroke="url(#problemGrad2)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -1s"/>
+          <path d="M1220,380 Q1150,350 1080,320" stroke="url(#problemGrad2)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -1.5s"/>
+          <path d="M1220,380 Q1150,430 1080,480" stroke="url(#problemGrad2)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -2s"/>
+          <path d="M1220,520 Q1150,500 1080,480" stroke="url(#problemGrad2)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -2.5s"/>
+        </g>
+        <g class="center-decoration">
+          <polygon points="700,100 740,120 740,160 700,180 660,160 660,120" fill="none" stroke="rgba(160,125,63,0.15)" stroke-width="1.5" class="hex-rotate" style="transform-origin:700px 140px"/>
+          <circle cx="700" cy="140" r="12" fill="none" stroke="rgba(160,125,63,0.2)" stroke-width="1" class="pulse-ring"/>
+          <polygon points="700,620 740,640 740,680 700,700 660,680 660,640" fill="none" stroke="rgba(74,158,255,0.12)" stroke-width="1" class="hex-rotate" style="transform-origin:700px 660px; animation-direction:reverse"/>
+        </g>
+        <path d="M0,750 Q350,720 700,750 T1400,750" stroke="rgba(160,125,63,0.12)" stroke-width="2" fill="none" class="wave-path"/>
+        <path d="M0,770 Q350,740 700,770 T1400,770" stroke="rgba(74,158,255,0.08)" stroke-width="1.5" fill="none" class="wave-path" style="animation-delay: -1s"/>
+      </svg>
+    </div>
+    <div class="container">
+      <p class="accent-label reveal">THE REALITY</p>
+      <h2 class="reveal reveal-d1">Every Missed Call Is Revenue<br>Walking Out the Door.</h2>
+      <p class="body-text reveal reveal-d2">Your front desk is overwhelmed. Calls go to voicemail during peak hours. Appointment requests sit in inboxes. Patients who can't get through don't call back — they book with your competitor.</p>
+      <p class="body-text reveal reveal-d3">Manual scheduling, confirmation calls, and follow-up reminders consume hours every week. Your staff is buried in admin work instead of serving the people in front of them.</p>
+      <div class="stat-cards">
+        <div class="stat-card reveal reveal-d3">
+          <div class="stat-number" data-target="67" data-suffix="%">0%</div>
+          <div class="stat-desc">of missed calls never call back</div>
+        </div>
+        <div class="stat-card reveal reveal-d4">
+          <div class="stat-number" data-target="23" data-suffix=" hrs">0 hrs</div>
+          <div class="stat-desc">spent weekly on manual scheduling per practice</div>
+        </div>
+        <div class="stat-card reveal reveal-d5">
+          <div class="stat-number" data-prefix="$" data-target="130" data-suffix="K+">$0K+</div>
+          <div class="stat-desc">average annual revenue lost to scheduling gaps</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SOLUTION SECTION ==================== -->
+  <section id="solution" class="section-dark">
+    <canvas class="constellation-canvas" id="solution-canvas"></canvas>
+    <div class="bg-blobs">
+      <div class="bg-blob" style="top:20%; left:60%; width:400px; height:400px; background:radial-gradient(circle,rgba(74,158,255,0.15),transparent 70%);"></div>
+      <div class="bg-blob" style="bottom:10%; left:10%; width:350px; height:350px; background:radial-gradient(circle,rgba(139,92,246,0.1),transparent 70%);"></div>
+    </div>
+    <div class="container">
+      <p class="accent-label reveal">THE SYSTEM</p>
+      <h2 class="reveal reveal-d1">One System. Every<br>Appointment Captured.</h2>
+      <p class="sub-text reveal reveal-d2">Aureon replaces manual front-desk workflows with an integrated operational layer that handles scheduling, communication, and follow-up — automatically.</p>
+      <div class="pillars">
+        <div class="pillar-card reveal reveal-d2">
+          <span class="pillar-icon">◈</span>
+          <h3>Intelligent Scheduling</h3>
+          <p>Appointments are booked, rescheduled, and managed through natural conversations. No hold music. No phone tag. No missed opportunities.</p>
+        </div>
+        <div class="pillar-card reveal reveal-d3">
+          <span class="pillar-icon">◈</span>
+          <h3>Automated Confirmations & Reminders</h3>
+          <p>Every booking triggers a confirmation. Every appointment gets a reminder. Email and SMS — sent automatically, timed perfectly.</p>
+        </div>
+        <div class="pillar-card reveal reveal-d4">
+          <span class="pillar-icon">◈</span>
+          <h3>Inbound Call Handling</h3>
+          <p>When your team can't answer, Aureon does. Calls are handled, questions are answered, and appointments are booked — even after hours.</p>
+        </div>
+        <div class="pillar-card reveal reveal-d5">
+          <span class="pillar-icon">◈</span>
+          <h3>Operational Analytics</h3>
+          <p>See every call, every booking, every missed opportunity. Understand your workflow performance and make decisions backed by real data.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== HOW IT WORKS SECTION ==================== -->
+  <section id="how-it-works" class="section-light">
+    <div class="ai-line-art-visible">
+      <svg viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="hiwGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgba(160,125,63,0.25)"/>
+            <stop offset="50%" style="stop-color:rgba(139,92,246,0.15)"/>
+            <stop offset="100%" style="stop-color:rgba(74,158,255,0.2)"/>
+          </linearGradient>
+          <linearGradient id="hiwGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:rgba(160,125,63,0.2)"/>
+            <stop offset="100%" style="stop-color:rgba(74,158,255,0.15)"/>
+          </linearGradient>
+        </defs>
+        <g class="neural-flow">
+          <circle cx="40" cy="120" r="7" fill="rgba(160,125,63,0.22)" class="pulse-node"/>
+          <circle cx="40" cy="280" r="9" fill="rgba(160,125,63,0.18)" class="pulse-node" style="animation-delay: -0.8s"/>
+          <circle cx="40" cy="440" r="6" fill="rgba(160,125,63,0.2)" class="pulse-node" style="animation-delay: -1.6s"/>
+          <circle cx="40" cy="600" r="8" fill="rgba(160,125,63,0.15)" class="pulse-node" style="animation-delay: -2.4s"/>
+          <circle cx="160" cy="180" r="11" fill="rgba(139,92,246,0.18)" class="pulse-node" style="animation-delay: -0.4s"/>
+          <circle cx="160" cy="360" r="8" fill="rgba(139,92,246,0.22)" class="pulse-node" style="animation-delay: -1.2s"/>
+          <circle cx="160" cy="540" r="10" fill="rgba(139,92,246,0.15)" class="pulse-node" style="animation-delay: -2s"/>
+          <circle cx="300" cy="120" r="6" fill="rgba(74,158,255,0.2)" class="pulse-node" style="animation-delay: -0.6s"/>
+          <circle cx="300" cy="280" r="13" fill="rgba(160,125,63,0.18)" class="pulse-node" style="animation-delay: -1.4s"/>
+          <circle cx="300" cy="450" r="7" fill="rgba(74,158,255,0.22)" class="pulse-node" style="animation-delay: -2.2s"/>
+          <circle cx="300" cy="620" r="9" fill="rgba(160,125,63,0.15)" class="pulse-node" style="animation-delay: -3s"/>
+          <path d="M40,120 Q100,140 160,180" stroke="url(#hiwGrad1)" stroke-width="1.5" fill="none" class="flow-line"/>
+          <path d="M40,280 Q100,220 160,180" stroke="url(#hiwGrad1)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -0.8s"/>
+          <path d="M40,280 Q100,320 160,360" stroke="url(#hiwGrad1)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -0.4s"/>
+          <path d="M40,440 Q100,400 160,360" stroke="url(#hiwGrad1)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -1.2s"/>
+          <path d="M40,440 Q100,490 160,540" stroke="url(#hiwGrad1)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -1.6s"/>
+          <path d="M40,600 Q100,570 160,540" stroke="url(#hiwGrad1)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -2s"/>
+          <path d="M160,180 Q230,140 300,120" stroke="url(#hiwGrad2)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -0.2s"/>
+          <path d="M160,180 Q230,230 300,280" stroke="url(#hiwGrad2)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -0.6s"/>
+          <path d="M160,360 Q230,320 300,280" stroke="url(#hiwGrad2)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -1s"/>
+          <path d="M160,360 Q230,405 300,450" stroke="url(#hiwGrad2)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -1.4s"/>
+          <path d="M160,540 Q230,495 300,450" stroke="url(#hiwGrad2)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -1.8s"/>
+          <path d="M160,540 Q230,580 300,620" stroke="url(#hiwGrad2)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -2.2s"/>
+        </g>
+        <g class="neural-flow">
+          <circle cx="1360" cy="120" r="7" fill="rgba(160,125,63,0.22)" class="pulse-node" style="animation-delay: -0.3s"/>
+          <circle cx="1360" cy="280" r="9" fill="rgba(160,125,63,0.18)" class="pulse-node" style="animation-delay: -1.1s"/>
+          <circle cx="1360" cy="440" r="6" fill="rgba(160,125,63,0.2)" class="pulse-node" style="animation-delay: -1.9s"/>
+          <circle cx="1360" cy="600" r="8" fill="rgba(160,125,63,0.15)" class="pulse-node" style="animation-delay: -2.7s"/>
+          <circle cx="1240" cy="180" r="11" fill="rgba(139,92,246,0.18)" class="pulse-node" style="animation-delay: -0.7s"/>
+          <circle cx="1240" cy="360" r="8" fill="rgba(139,92,246,0.22)" class="pulse-node" style="animation-delay: -1.5s"/>
+          <circle cx="1240" cy="540" r="10" fill="rgba(139,92,246,0.15)" class="pulse-node" style="animation-delay: -2.3s"/>
+          <circle cx="1100" cy="120" r="6" fill="rgba(74,158,255,0.2)" class="pulse-node" style="animation-delay: -0.9s"/>
+          <circle cx="1100" cy="280" r="13" fill="rgba(160,125,63,0.18)" class="pulse-node" style="animation-delay: -1.7s"/>
+          <circle cx="1100" cy="450" r="7" fill="rgba(74,158,255,0.22)" class="pulse-node" style="animation-delay: -2.5s"/>
+          <circle cx="1100" cy="620" r="9" fill="rgba(160,125,63,0.15)" class="pulse-node" style="animation-delay: -3.3s"/>
+          <path d="M1360,120 Q1300,140 1240,180" stroke="url(#hiwGrad1)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -0.3s"/>
+          <path d="M1360,280 Q1300,220 1240,180" stroke="url(#hiwGrad1)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -1.1s"/>
+          <path d="M1360,280 Q1300,320 1240,360" stroke="url(#hiwGrad1)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -0.7s"/>
+          <path d="M1360,440 Q1300,400 1240,360" stroke="url(#hiwGrad1)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -1.5s"/>
+          <path d="M1360,440 Q1300,490 1240,540" stroke="url(#hiwGrad1)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -1.9s"/>
+          <path d="M1360,600 Q1300,570 1240,540" stroke="url(#hiwGrad1)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -2.3s"/>
+          <path d="M1240,180 Q1170,140 1100,120" stroke="url(#hiwGrad2)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -0.5s"/>
+          <path d="M1240,180 Q1170,230 1100,280" stroke="url(#hiwGrad2)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -0.9s"/>
+          <path d="M1240,360 Q1170,320 1100,280" stroke="url(#hiwGrad2)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -1.3s"/>
+          <path d="M1240,360 Q1170,405 1100,450" stroke="url(#hiwGrad2)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -1.7s"/>
+          <path d="M1240,540 Q1170,495 1100,450" stroke="url(#hiwGrad2)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -2.1s"/>
+          <path d="M1240,540 Q1170,580 1100,620" stroke="url(#hiwGrad2)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -2.5s"/>
+        </g>
+        <g class="center-decoration">
+          <polygon points="700,80 745,105 745,155 700,180 655,155 655,105" fill="none" stroke="rgba(160,125,63,0.18)" stroke-width="1.5" class="hex-rotate" style="transform-origin:700px 130px"/>
+          <polygon points="700,95 730,112 730,148 700,165 670,148 670,112" fill="none" stroke="rgba(139,92,246,0.12)" stroke-width="1" class="hex-rotate" style="transform-origin:700px 130px; animation-direction:reverse"/>
+          <circle cx="700" cy="130" r="10" fill="rgba(160,125,63,0.12)"/>
+          <circle cx="700" cy="130" r="18" fill="none" stroke="rgba(160,125,63,0.15)" stroke-width="1" class="pulse-ring"/>
+          <path d="M300,280 Q500,200 655,130" stroke="rgba(160,125,63,0.1)" stroke-width="1" fill="none" stroke-dasharray="5,5" class="dash-flow"/>
+          <path d="M1100,280 Q900,200 745,130" stroke="rgba(160,125,63,0.1)" stroke-width="1" fill="none" stroke-dasharray="5,5" class="dash-flow" style="animation-delay: -2s"/>
+        </g>
+        <path d="M0,720 Q350,690 700,720 T1400,720" stroke="rgba(160,125,63,0.1)" stroke-width="2" fill="none" class="wave-path"/>
+        <path d="M0,745 Q350,715 700,745 T1400,745" stroke="rgba(74,158,255,0.08)" stroke-width="1.5" fill="none" class="wave-path" style="animation-delay: -1s"/>
+      </svg>
+    </div>
+    <div class="container">
+      <p class="accent-label reveal">HOW IT WORKS</p>
+      <h2 class="reveal reveal-d1">Three Steps to a<br>Self-Running Front Desk.</h2>
+      <p class="sub-text reveal reveal-d2">Transform your operations with seamless integration, smart configuration, and effortless opportunity capture—all automated for you.</p>
+      <div class="steps-wrapper">
+        <div class="step-connector">
+          <div class="step-connector-line"></div>
+        </div>
+        <div class="step reveal reveal-d2">
+          <div class="step-number">01</div>
+          <span class="step-icon">📞</span>
+          <h3>Connect Your Channels</h3>
+          <p>We integrate with your existing phone lines, booking systems, and communication tools. No disruption to your current operations.</p>
+        </div>
+        <div class="step reveal reveal-d3">
+          <div class="step-number">02</div>
+          <span class="step-icon">⚙️</span>
+          <h3>Configure Your Workflows</h3>
+          <p>We map your scheduling logic, FAQ responses, business hours, and communication preferences into Aureon's system — tailored to how you operate.</p>
+        </div>
+        <div class="step reveal reveal-d4">
+          <div class="step-number">03</div>
+          <span class="step-icon">🎯</span>
+          <h3>Capture Every Opportunity</h3>
+          <p>Aureon handles inbound calls, books appointments, sends confirmations, and follows up — around the clock. You review the dashboard. Your team stays focused.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== INDUSTRIES SECTION ==================== -->
+  <section id="industries" class="section-dark">
+    <canvas class="constellation-canvas" id="industries-canvas"></canvas>
+    <div class="bg-blobs">
+      <div class="bg-blob" style="top:30%; right:10%; width:350px; height:350px; background:radial-gradient(circle,rgba(201,169,110,0.12),transparent 70%);"></div>
+    </div>
+    <div class="container">
+      <div class="header-area">
+        <p class="accent-label reveal">BUILT FOR YOU</p>
+        <h2 class="reveal reveal-d1">Designed for Businesses That<br>Run on Appointments.</h2>
+      </div>
+      <div class="carousel-wrapper">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="industry-card featured reveal reveal-d2">
+            <div class="industry-bg"><img src="images/1.png",  alt=""></div>
+            <div class="industry-overlay"></div>
+            <div class="industry-content">
+              <span class="industry-badge">Specialized</span>
+              <h3>Medical Clinics & Healthcare</h3>
+              <p>HIPAA-ready workflows, secure patient communication, and scheduling automation built for clinical operations.</p>
+            </div>
+          </div>
+          <div class="industry-card reveal reveal-d3">
+            <div class="industry-bg"><img src="images/2.png" alt=""></div>
+            <div class="industry-overlay"></div>
+            <div class="industry-content">
+              <h3>Dental Practices</h3>
+              <p>Reduce no-shows and fill your chair schedule without overloading your front desk.</p>
+            </div>
+          </div>
+          <div class="industry-card reveal reveal-d3">
+            <div class="industry-bg"><img src="images/3.png" alt=""></div>
+            <div class="industry-overlay"></div>
+            <div class="industry-content">
+              <h3>Aesthetic & Med Spa</h3>
+              <p>Capture consultation requests and manage high-volume booking demand effortlessly.</p>
+            </div>
+          </div>
+          <div class="industry-card reveal reveal-d4">
+            <div class="industry-bg"><img src="images/4.png" alt=""></div>
+            <div class="industry-overlay"></div>
+            <div class="industry-content">
+              <h3>Wellness & Therapy</h3>
+              <p>Give your clients a seamless scheduling experience while protecting session availability.</p>
+            </div>
+          </div>
+          <div class="industry-card reveal reveal-d4">
+            <div class="industry-bg"><img src="images/5.png" alt=""></div>
+            <div class="industry-overlay"></div>
+            <div class="industry-content">
+              <h3>Salons & Beauty</h3>
+              <p>Never miss a booking call during peak hours again.</p>
+            </div>
+          </div>
+          <div class="industry-card reveal reveal-d5">
+            <div class="industry-bg"><img src="images/6.png" alt=""></div>
+            <div class="industry-overlay"></div>
+            <div class="industry-content">
+              <h3>Professional Services</h3>
+              <p>Automate discovery call scheduling and follow-up for your pipeline.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-progress"><div class="carousel-progress-fill" id="carouselProgress"></div></div>
+    </div>
+  </section>
+
+  <!-- ==================== HEALTHCARE SECTION ==================== -->
+  <section id="healthcare" class="section-deeper">
+    <canvas class="constellation-canvas" id="healthcare-canvas"></canvas>
+    <div class="bg-blobs">
+      <div class="bg-blob" style="top:10%; left:50%; width:500px; height:500px; background:radial-gradient(circle,rgba(74,158,255,0.08),transparent 70%);"></div>
+      <div class="bg-blob" style="bottom:20%; left:10%; width:400px; height:400px; background:radial-gradient(circle,rgba(201,169,110,0.06),transparent 70%);"></div>
+    </div>
+    <div class="container">
+      <div class="healthcare-grid">
+        <div class="healthcare-text">
+          <p class="accent-label reveal">HEALTHCARE READY</p>
+          <h2 class="reveal reveal-d1">Built for Appointment<br>Businesses. Specialized<br>for Healthcare.</h2>
+          <p class="body-text reveal reveal-d2">Healthcare practices operate under stricter requirements and higher stakes. Aureon's clinic configuration includes HIPAA-compliant communication workflows, secure patient data handling, automated insurance inquiry routing, and scheduling logic built around clinical availability — not generic calendar slots.</p>
+          <div class="reveal reveal-d3">
+            <div class="feature-item"><span class="diamond">◆</span> HIPAA-compliant communication infrastructure</div>
+            <div class="feature-item"><span class="diamond">◆</span> Secure patient data handling and storage</div>
+            <div class="feature-item"><span class="diamond">◆</span> Automated appointment confirmations and pre-visit reminders</div>
+            <div class="feature-item"><span class="diamond">◆</span> Insurance and intake inquiry routing</div>
+            <div class="feature-item"><span class="diamond">◆</span> After-hours call capture and scheduling</div>
+            <div class="feature-item"><span class="diamond">◆</span> Regional compliance configuration</div>
+          </div>
+          <a href="#pricing" class="healthcare-cta reveal reveal-d4">Learn More About Healthcare Solutions →</a>
+        </div>
+        <div class="reveal reveal-d3">
+          <div class="mockup-card">
+            <div class="mockup-header">
+              <div class="mockup-dot"></div>
+              <div class="mockup-dot"></div>
+              <div class="mockup-dot"></div>
+            </div>
+            <div class="mockup-row">
+              <div class="mockup-avatar">👤</div>
+              <div class="mockup-info">
+                <div class="mockup-name">Sarah M.</div>
+                <div class="mockup-detail">Dental Cleaning · 2:30 PM</div>
+              </div>
+              <span class="mockup-status status-confirmed">Confirmed</span>
+            </div>
+            <div class="mockup-row">
+              <div class="mockup-avatar">👤</div>
+              <div class="mockup-info">
+                <div class="mockup-name">James R.</div>
+                <div class="mockup-detail">Consultation · 3:15 PM</div>
+              </div>
+              <span class="mockup-status status-confirmed">Confirmed</span>
+            </div>
+            <div class="mockup-row">
+              <div class="mockup-avatar">👤</div>
+              <div class="mockup-info">
+                <div class="mockup-name">Lisa T.</div>
+                <div class="mockup-detail">Follow-up · 4:00 PM</div>
+              </div>
+              <span class="mockup-status status-pending">Pending</span>
+            </div>
+            <div class="mockup-stat-row">
+              <div class="mockup-stat">
+                <div class="mockup-stat-num">47</div>
+                <div class="mockup-stat-label">Calls Today</div>
+              </div>
+              <div class="mockup-stat">
+                <div class="mockup-stat-num">98%</div>
+                <div class="mockup-stat-label">Captured</div>
+              </div>
+              <div class="mockup-stat">
+                <div class="mockup-stat-num">12</div>
+                <div class="mockup-stat-label">Booked</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== RESULTS SECTION ==================== -->
+  <section id="results" class="section-light">
+    <div class="ai-line-art-visible">
+      <svg viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="resultsGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgba(160,125,63,0.25)"/>
+            <stop offset="50%" style="stop-color:rgba(139,92,246,0.15)"/>
+            <stop offset="100%" style="stop-color:rgba(74,158,255,0.2)"/>
+          </linearGradient>
+          <linearGradient id="resultsGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:rgba(160,125,63,0.2)"/>
+            <stop offset="100%" style="stop-color:rgba(74,158,255,0.15)"/>
+          </linearGradient>
+        </defs>
+        <g class="neural-flow">
+          <circle cx="60" cy="140" r="8" fill="rgba(160,125,63,0.2)" class="pulse-node"/>
+          <circle cx="60" cy="320" r="6" fill="rgba(160,125,63,0.22)" class="pulse-node" style="animation-delay: -0.9s"/>
+          <circle cx="60" cy="480" r="10" fill="rgba(160,125,63,0.18)" class="pulse-node" style="animation-delay: -1.8s"/>
+          <circle cx="60" cy="640" r="7" fill="rgba(160,125,63,0.15)" class="pulse-node" style="animation-delay: -2.7s"/>
+          <circle cx="200" cy="220" r="12" fill="rgba(139,92,246,0.2)" class="pulse-node" style="animation-delay: -0.5s"/>
+          <circle cx="200" cy="400" r="9" fill="rgba(139,92,246,0.18)" class="pulse-node" style="animation-delay: -1.4s"/>
+          <circle cx="200" cy="560" r="11" fill="rgba(139,92,246,0.15)" class="pulse-node" style="animation-delay: -2.3s"/>
+          <circle cx="360" cy="160" r="7" fill="rgba(74,158,255,0.22)" class="pulse-node" style="animation-delay: -0.7s"/>
+          <circle cx="360" cy="320" r="14" fill="rgba(160,125,63,0.2)" class="pulse-node" style="animation-delay: -1.6s"/>
+          <circle cx="360" cy="500" r="8" fill="rgba(74,158,255,0.18)" class="pulse-node" style="animation-delay: -2.5s"/>
+          <path d="M60,140 Q130,170 200,220" stroke="url(#resultsGrad1)" stroke-width="1.5" fill="none" class="flow-line"/>
+          <path d="M60,320 Q130,260 200,220" stroke="url(#resultsGrad1)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -0.9s"/>
+          <path d="M60,320 Q130,360 200,400" stroke="url(#resultsGrad1)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -0.5s"/>
+          <path d="M60,480 Q130,440 200,400" stroke="url(#resultsGrad1)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -1.4s"/>
+          <path d="M60,480 Q130,520 200,560" stroke="url(#resultsGrad1)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -1.8s"/>
+          <path d="M60,640 Q130,600 200,560" stroke="url(#resultsGrad1)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -2.3s"/>
+          <path d="M200,220 Q280,180 360,160" stroke="url(#resultsGrad2)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -0.3s"/>
+          <path d="M200,220 Q280,270 360,320" stroke="url(#resultsGrad2)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -0.7s"/>
+          <path d="M200,400 Q280,360 360,320" stroke="url(#resultsGrad2)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -1.2s"/>
+          <path d="M200,400 Q280,450 360,500" stroke="url(#resultsGrad2)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -1.6s"/>
+          <path d="M200,560 Q280,530 360,500" stroke="url(#resultsGrad2)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -2s"/>
+        </g>
+        <g class="neural-flow">
+          <circle cx="1340" cy="140" r="8" fill="rgba(160,125,63,0.2)" class="pulse-node" style="animation-delay: -0.4s"/>
+          <circle cx="1340" cy="320" r="6" fill="rgba(160,125,63,0.22)" class="pulse-node" style="animation-delay: -1.3s"/>
+          <circle cx="1340" cy="480" r="10" fill="rgba(160,125,63,0.18)" class="pulse-node" style="animation-delay: -2.2s"/>
+          <circle cx="1340" cy="640" r="7" fill="rgba(160,125,63,0.15)" class="pulse-node" style="animation-delay: -3.1s"/>
+          <circle cx="1200" cy="220" r="12" fill="rgba(139,92,246,0.2)" class="pulse-node" style="animation-delay: -0.9s"/>
+          <circle cx="1200" cy="400" r="9" fill="rgba(139,92,246,0.18)" class="pulse-node" style="animation-delay: -1.8s"/>
+          <circle cx="1200" cy="560" r="11" fill="rgba(139,92,246,0.15)" class="pulse-node" style="animation-delay: -2.7s"/>
+          <circle cx="1040" cy="160" r="7" fill="rgba(74,158,255,0.22)" class="pulse-node" style="animation-delay: -1.1s"/>
+          <circle cx="1040" cy="320" r="14" fill="rgba(160,125,63,0.2)" class="pulse-node" style="animation-delay: -2s"/>
+          <circle cx="1040" cy="500" r="8" fill="rgba(74,158,255,0.18)" class="pulse-node" style="animation-delay: -2.9s"/>
+          <path d="M1340,140 Q1270,170 1200,220" stroke="url(#resultsGrad1)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -0.4s"/>
+          <path d="M1340,320 Q1270,260 1200,220" stroke="url(#resultsGrad1)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -1.3s"/>
+          <path d="M1340,320 Q1270,360 1200,400" stroke="url(#resultsGrad1)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -0.9s"/>
+          <path d="M1340,480 Q1270,440 1200,400" stroke="url(#resultsGrad1)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -1.8s"/>
+          <path d="M1340,480 Q1270,520 1200,560" stroke="url(#resultsGrad1)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -2.2s"/>
+          <path d="M1340,640 Q1270,600 1200,560" stroke="url(#resultsGrad1)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -2.7s"/>
+          <path d="M1200,220 Q1120,180 1040,160" stroke="url(#resultsGrad2)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -0.7s"/>
+          <path d="M1200,220 Q1120,270 1040,320" stroke="url(#resultsGrad2)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -1.1s"/>
+          <path d="M1200,400 Q1120,360 1040,320" stroke="url(#resultsGrad2)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -1.6s"/>
+          <path d="M1200,400 Q1120,450 1040,500" stroke="url(#resultsGrad2)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -2s"/>
+          <path d="M1200,560 Q1120,530 1040,500" stroke="url(#resultsGrad2)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -2.4s"/>
+        </g>
+        <g class="center-decoration">
+          <polygon points="700,60 750,90 750,150 700,180 650,150 650,90" fill="none" stroke="rgba(160,125,63,0.15)" stroke-width="1.5" class="hex-rotate" style="transform-origin:700px 120px"/>
+          <circle cx="700" cy="120" r="15" fill="none" stroke="rgba(160,125,63,0.18)" stroke-width="1" class="pulse-ring"/>
+          <circle cx="700" cy="120" r="8" fill="rgba(160,125,63,0.1)"/>
+          <path d="M360,320 Q530,220 650,120" stroke="rgba(160,125,63,0.12)" stroke-width="1" fill="none" stroke-dasharray="5,5" class="dash-flow"/>
+          <path d="M1040,320 Q870,220 750,120" stroke="rgba(160,125,63,0.12)" stroke-width="1" fill="none" stroke-dasharray="5,5" class="dash-flow" style="animation-delay: -2s"/>
+        </g>
+        <path d="M0,740 Q350,710 700,740 T1400,740" stroke="rgba(160,125,63,0.12)" stroke-width="2" fill="none" class="wave-path"/>
+        <path d="M0,760 Q350,730 700,760 T1400,760" stroke="rgba(74,158,255,0.08)" stroke-width="1.5" fill="none" class="wave-path" style="animation-delay: -1s"/>
+      </svg>
+    </div>
+    <div class="container">
+      <p class="accent-label reveal">RESULTS</p>
+      <h2 class="reveal reveal-d1">The Numbers Speak.<br>Your Operations Improve.</h2>
+      <div class="results-grid">
+        <div class="result-block reveal reveal-d2">
+          <div class="result-number" data-target="93" data-suffix="%">0%</div>
+          <div class="result-line"></div>
+          <div class="result-desc">of inbound calls answered or captured</div>
+        </div>
+        <div class="result-block reveal reveal-d3">
+          <div class="result-number" data-target="4.2" data-suffix=" hrs" data-decimal="true">0 hrs</div>
+          <div class="result-line"></div>
+          <div class="result-desc">saved daily on scheduling and follow-up</div>
+        </div>
+        <div class="result-block reveal reveal-d4">
+          <div class="result-number" data-target="38" data-suffix="%">0%</div>
+          <div class="result-line"></div>
+          <div class="result-desc">increase in booking conversion rate</div>
+        </div>
+        <div class="result-block reveal reveal-d5">
+          <div class="result-number" data-prefix="< " data-target="24" data-suffix=" hrs">< 0 hrs</div>
+          <div class="result-line"></div>
+          <div class="result-desc">average deployment time</div>
+        </div>
+      </div>
+      <div class="testimonial-area reveal reveal-d3">
+        <div class="testimonial-quote">
+          Join the growing number of practices replacing front-desk chaos with automated precision.
+        </div>
+        <div style="margin-top: 32px;">
+          <a href="#" class="btn-demo" onclick="openModal(event)">Book a Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRICING SECTION ==================== -->
+  <section id="pricing" class="section-dark">
+    <canvas class="constellation-canvas" id="pricing-canvas"></canvas>
+    <div class="bg-blobs">
+      <div class="bg-blob" style="top:30%; left:20%; width:450px; height:450px; background:radial-gradient(circle,rgba(139,92,246,0.1),transparent 70%);"></div>
+      <div class="bg-blob" style="bottom:10%; right:20%; width:350px; height:350px; background:radial-gradient(circle,rgba(201,169,110,0.08),transparent 70%);"></div>
+    </div>
+    <div class="container">
+      <p class="accent-label reveal">PRICING</p>
+      <h2 class="reveal reveal-d1">Simple, Transparent Pricing.<br>No Surprises.</h2>
+      <p class="sub-text reveal reveal-d2" style="text-align: center;">Every plan includes full system setup, workflow configuration, and three months of complimentary maintenance.</p>
+      <div class="pricing-tiers">
+        <div class="tier-card reveal reveal-d2">
+          <h3>Appointment Businesses</h3>
+          <p class="tier-subtitle">For any appointment-based business</p>
+          <div class="tier-price">$4,399</div>
+          <div class="tier-label">One-Time Setup</div>
+          <ul class="tier-includes">
+            <li>System configuration</li>
+            <li>Workflow mapping</li>
+            <li>Automation integration</li>
+            <li>3 months free maintenance</li>
+          </ul>
+          <div class="tier-addon">
+            <strong>Get a free Website Included</strong><br>
+            <span>Includes full website design with integrated Aureon system.</span>
+          </div>
+        </div>
+        <div class="tier-card featured reveal reveal-d3">
+          <span class="tier-badge">Specialized</span>
+          <h3>Healthcare Practices</h3>
+          <p class="tier-subtitle">For clinics and medical practices</p>
+          <div class="tier-price">$5,499</div>
+          <div class="tier-label">One-Time Setup</div>
+          <ul class="tier-includes">
+            <li>Everything in Appointment Businesses</li>
+            <li>HIPAA-ready configuration</li>
+            <li>Healthcare workflow optimization</li>
+            <li>Secure patient communication setup</li>
+          </ul>
+          <div class="tier-addon">
+            <strong>Get a free Website Included</strong><br>
+            <span>Includes full website design with integrated Aureon system.</span>
+          </div>
+        </div>
+      </div>
+      <div class="monthly-section">
+        <p class="accent-label reveal" style="text-align:center;">MONTHLY PLANS</p>
+        <p class="sub-text reveal reveal-d1" style="text-align: center;">After your complimentary 3-month period, select the plan that matches your call volume.</p>
+        <div class="monthly-grid">
+          <div class="monthly-card reveal reveal-d2">
+            <h4>Starter</h4>
+            <div class="monthly-volume">50 calls / month</div>
+            <div class="monthly-price">$90<span>/mo</span></div>
+          </div>
+          <div class="monthly-card reveal reveal-d3">
+            <h4>Growth</h4>
+            <div class="monthly-volume">150 calls / month</div>
+            <div class="monthly-price">$185<span>/mo</span></div>
+          </div>
+          <div class="monthly-card reveal reveal-d4">
+            <h4>Scale</h4>
+            <div class="monthly-volume">300 calls / month</div>
+            <div class="monthly-price">$320<span>/mo</span></div>
+          </div>
+          <div class="monthly-card reveal reveal-d5">
+            <h4>Pro</h4>
+            <div class="monthly-volume">600 calls / month</div>
+            <div class="monthly-price">$550<span>/mo</span></div>
+          </div>
+        </div>
+        <p class="custom-note reveal reveal-d3">Need more than 600 calls? Custom plans available at $1 per call.</p>
+        <div style="text-align: center; margin-top: 40px;" class="reveal reveal-d4">
+          <a href="#" class="btn-demo" onclick="openModal(event)">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT SECTION ==================== -->
+  <section id="about">
+    <!-- About Hero -->
+    <div class="about-hero-wrapper">
+      <canvas class="constellation-canvas" id="about-canvas"></canvas>
+      <div class="about-hero-bg">
+        <div class="about-hero-gradient"></div>
+        <div class="about-hero-particles">
+          <div class="about-particle"></div>
+          <div class="about-particle"></div>
+          <div class="about-particle"></div>
+          <div class="about-particle"></div>
+          <div class="about-particle"></div>
+          <div class="about-particle"></div>
+          <div class="about-particle"></div>
+          <div class="about-particle"></div>
+        </div>
+        <div class="about-hero-scanlines"></div>
+      </div>
+      <div class="about-hero">
+        <div class="about-hero-content">
+          <div class="about-hero-identity">
+            <div class="about-hero-label reveal">
+              <div class="about-hero-label-line"></div>
+              <span class="about-hero-label-text">Founder</span>
+            </div>
+            <div class="about-hero-name reveal reveal-d1">
+              <div class="name-glow"></div>
+              Sumit
+            </div>
+            <div class="about-hero-roles reveal reveal-d2">
+              <span class="about-hero-role">Systems Builder</span>
+              <span class="about-hero-role blue">Automation Architect</span>
+              <span class="about-hero-role">Deep Thinker</span>
+            </div>
+            <p class="about-hero-tagline reveal reveal-d3">
+              Behind Aureon isn't a large corporate team or a polished tech incubator. It started with <strong>one person who couldn't ignore inefficiency</strong> — and decided to build something about it.
+            </p>
+            <div class="about-hero-meta reveal reveal-d4">
+              <div class="about-meta-item">
+                <div class="about-meta-value">16</div>
+                <div class="about-meta-label">Years Old</div>
+              </div>
+              <div class="about-meta-item">
+                <div class="about-meta-value">∞</div>
+                <div class="about-meta-label">Ideas</div>
+              </div>
+              <div class="about-meta-item">
+                <div class="about-meta-value">1</div>
+                <div class="about-meta-label">Mission</div>
+              </div>
+            </div>
+          </div>
+          <div class="about-hero-card reveal reveal-d2">
+            <div class="about-profile-card">
+              <div class="profile-image-area">
+                <div class="frame-glow-ring"></div>
+                <div class="frame-sparks">
+                  <div class="spark"></div>
+                  <div class="spark"></div>
+                  <div class="spark"></div>
+                  <div class="spark"></div>
+                  <div class="spark"></div>
+                  <div class="spark"></div>
+                  <div class="spark"></div>
+                  <div class="spark"></div>
+                </div>
+                <div class="profile-frame-container">
+                  <div class="elephant-glow"></div>
+                  <div class="elephant-trunk-tip"></div>
+                  <img src="images/frame.png" alt="" class="mystical-frame">
+                  <img src="images/frame.png" alt="" class="flame-overlay">
+                  <img src="images/frame.png" alt="" class="flame-overlay-2">
+                  <div class="flame-streak"></div>
+                  <div class="flame-streak"></div>
+                  <div class="flame-streak"></div>
+                  <div class="flame-streak"></div>
+                  <img src="images/Sumit.png" alt="Sumit - Founder" class="profile-photo">
+                </div>
+              </div>
+              <div class="profile-card-body">
+                <div class="profile-card-name">Sumit</div>
+                <div class="profile-card-role">Founder · Aureon</div>
+                <div class="profile-card-stats">
+                  <div class="profile-stat">
+                    <div class="profile-stat-icon">🎌</div>
+                    <div class="profile-stat-text">Anime<br>Enthusiast</div>
+                  </div>
+                  <div class="profile-stat">
+                    <div class="profile-stat-icon">🧠</div>
+                    <div class="profile-stat-text">Deep<br>Thinker</div>
+                  </div>
+                  <div class="profile-stat">
+                    <div class="profile-stat-icon">🍫</div>
+                    <div class="profile-stat-text">Sweet<br>Tooth</div>
+                  </div>
+                </div>
+                <div class="profile-card-interests">
+                  <span class="interest-tag">Web Dev</span>
+                  <span class="interest-tag">AI Agents</span>
+                  <span class="interest-tag">3D Design</span>
+                  <span class="interest-tag">Mathematics</span>
+                  <span class="interest-tag">Bugatti</span>
+                  <span class="interest-tag">Anime</span>
+                  <span class="interest-tag">Generative AI</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Story Section -->
+    <div class="about-story-section">
+      <div class="ai-line-art-visible">
+        <svg viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice">
+          <path d="M0,150 Q200,100 400,150 T800,130 T1200,160" fill="none" stroke="rgba(160,125,63,0.08)" stroke-width="1"/>
+          <path d="M0,650 Q200,620 400,650 T800,640 T1200,660" fill="none" stroke="rgba(74,158,255,0.06)" stroke-width="1"/>
+          <circle cx="150" cy="300" r="2" fill="rgba(160,125,63,0.15)"/>
+          <circle cx="1050" cy="450" r="2" fill="rgba(160,125,63,0.12)"/>
+        </svg>
+      </div>
+      <div class="about-story-container">
+        <div class="story-section-label">
+          <p class="accent-label reveal">THE ORIGIN STORY</p>
+          <h2 class="reveal reveal-d1" style="color: var(--charcoal); font-family: 'DM Serif Display', serif; font-size: clamp(32px, 4vw, 48px);">How Aureon Came to Be</h2>
+        </div>
+        <div class="story-timeline-wrapper">
+          <div class="airplane-track">
+            <div class="track-line">
+              <div class="track-line-fill" id="trackLineFill"></div>
+            </div>
+            <div class="airplane-icon" id="airplaneIcon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+              </svg>
+            </div>
+            <div class="milestone-dot" data-chapter="1"></div>
+            <div class="milestone-dot" data-chapter="2"></div>
+            <div class="milestone-dot" data-chapter="3"></div>
+            <div class="milestone-dot" data-chapter="4"></div>
+            <div class="milestone-dot milestone-end" data-chapter="end">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="story-chapters" id="storyChapters">
+            <div class="story-chapter" data-chapter="1">
+              <div class="chapter-content">
+                <div class="story-chapter-marker">
+                  <div class="story-chapter-number">01</div>
+                  <div class="story-chapter-title">The Pattern Seeker</div>
+                </div>
+                <div class="story-text">
+                  <p>I've always been the kind of person who questions how things work. In school, in projects, in everyday systems — I naturally look for <span class="highlight">patterns, gaps, and ways to improve them</span>. While others accept "that's just how it is," I tend to ask:</p>
+                </div>
+                <div class="story-callout">
+                  <div class="story-callout-text">"Why hasn't someone fixed this yet?"</div>
+                </div>
+                <div class="story-text">
+                  <p>Aureon was born from that mindset.</p>
+                </div>
+              </div>
+            </div>
+            <div class="story-chapter" data-chapter="2">
+              <div class="chapter-content">
+                <div class="story-chapter-marker">
+                  <div class="story-chapter-number">02</div>
+                  <div class="story-chapter-title">The Problem I Couldn't Ignore</div>
+                </div>
+                <div class="story-text">
+                  <p>I noticed that appointment-based businesses weren't struggling because they lacked skill or demand — they were <span class="gold-highlight">losing money quietly</span> through missed confirmations, no-shows, delayed follow-ups, and manual chaos.</p>
+                  <p>Owners were working hard, but their systems weren't working for them.</p>
+                  <p>So I started building.</p>
+                </div>
+              </div>
+            </div>
+            <div class="story-chapter" data-chapter="3">
+              <div class="chapter-content">
+                <div class="story-chapter-marker">
+                  <div class="story-chapter-number">03</div>
+                  <div class="story-chapter-title">Building in the Shadows</div>
+                </div>
+                <div class="story-text">
+                  <p>Behind the scenes, Aureon is the result of late nights studying workflows, testing automation logic, <span class="highlight">breaking systems and rebuilding them better</span>. It wasn't about creating just another tool — it was about creating something reliable enough that a business owner could finally stop worrying about operations.</p>
+                </div>
+              </div>
+            </div>
+            <div class="story-chapter" data-chapter="4">
+              <div class="chapter-content">
+                <div class="story-chapter-marker">
+                  <div class="story-chapter-number">04</div>
+                  <div class="story-chapter-title">The Philosophy</div>
+                </div>
+                <div class="story-text">
+                  <p>Personally, I care about <span class="gold-highlight">discipline, long-term thinking, and building things that outlast trends</span>. Aureon reflects that. It's structured, intentional, and built with the belief that strong systems create freedom.</p>
+                  <p>I'm still young. I'm still learning. But I build with seriousness and long-term vision.</p>
+                </div>
+                <div class="story-callout">
+                  <div class="story-callout-text">Aureon is just the beginning.</div>
+                </div>
+              </div>
+            </div>
+            <div class="journey-complete">
+              <span class="journey-complete-icon">✈️</span>
+              <span class="journey-complete-text">Journey Complete — The Story Continues...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Personality Section -->
+    <div class="about-personality-section">
+      <canvas class="constellation-canvas" id="personality-canvas"></canvas>
+      <div class="personality-container">
+        <div class="personality-header">
+          <p class="accent-label reveal">BEYOND THE CODE</p>
+          <h3 class="reveal reveal-d1">When I'm Not Building Systems</h3>
+        </div>
+        <div class="personality-grid">
+          <div class="personality-card reveal reveal-d2">
+            <span class="personality-icon">🎌</span>
+            <h4>Anime Binge-Watcher</h4>
+            <p>When the code compiles, the anime plays. There's something about well-crafted stories and world-building that recharges the creative engine.</p>
+          </div>
+          <div class="personality-card reveal reveal-d3">
+            <span class="personality-icon">🍰</span>
+            <h4>Certified Sweet Tooth</h4>
+            <p>Chocolates, cakes, pastries, ice cream — if it's sweet, it's getting consumed. This is non-negotiable fuel for late-night builds.</p>
+          </div>
+          <div class="personality-card reveal reveal-d4">
+            <span class="personality-icon">🧠</span>
+            <h4>Overthinker (The Good Kind)</h4>
+            <p>Multiverse theory, what happens after death, how to run a country, the nature of consciousness — no topic is off-limits.</p>
+          </div>
+          <div class="personality-card reveal reveal-d5">
+            <span class="personality-icon">🏎️</span>
+            <h4>Bugatti Dreams</h4>
+            <p>The engineering, the design, the precision — there's a reason Bugatti is the dream machine. Appreciate beauty built with obsessive attention to detail.</p>
+          </div>
+          <div class="personality-card reveal reveal-d6">
+            <span class="personality-icon">📐</span>
+            <h4>Lifelong Learner</h4>
+            <p>3D design, web development, AI agents, generative AI, mathematics — the learning never stops. Every new skill unlocks a new way to build.</p>
+          </div>
+          <div class="personality-card reveal reveal-d7">
+            <span class="personality-icon">💡</span>
+            <h4>Idea Machine (Loading...)</h4>
+            <p>Head full of ideas, currently optimizing the execution pipeline. The vision is always clear — the motivation just needs a manual reboot sometimes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Mission -->
+    <div class="about-mission">
+      <div class="ai-line-art">
+        <svg viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice">
+          <path d="M0,200 Q300,150 600,200 T1200,200" fill="none" stroke="rgba(160,125,63,0.1)" stroke-width="1.5"/>
+          <circle cx="600" cy="200" r="60" fill="none" stroke="rgba(160,125,63,0.08)" stroke-width="1"/>
+          <circle cx="600" cy="200" r="100" fill="none" stroke="rgba(74,158,255,0.05)" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="mission-container">
+        <div class="mission-divider reveal" id="missionDivider"></div>
+        <div class="reveal reveal-d2">
+          <p class="mission-quote">The best system is the one your team never has to think about. It just works — and everything else gets better.</p>
+          <p class="mission-author">— The Aureon Philosophy</p>
+          <p class="mission-sub">Discipline. Long-term thinking. Systems that create freedom.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Co-Founder Section -->
+    <div class="about-cofounder-section">
+      <canvas class="constellation-canvas" id="cofounder-canvas"></canvas>
+      <div class="cofounder-container">
+        <div style="text-align: center; margin-bottom: 40px;">
+          <p class="accent-label reveal">THE TEAM GROWS</p>
+          <h2 class="reveal reveal-d1" style="color: var(--ivory); font-family: 'DM Serif Display', serif; font-size: clamp(28px, 3vw, 36px);">Meet the Other Mind Behind Aureon</h2>
+        </div>
+        <div class="cofounder-card reveal reveal-d2">
+          <div class="cofounder-card-inner">
+            <div class="cofounder-avatar">?</div>
+            <div class="cofounder-info">
+              <span class="cofounder-badge">Co-Founder</span>
+              <div class="cofounder-name">Varshita</div>
+              <p class="cofounder-teaser">Every great system needs more than one mind. Varshita brings a perspective that makes Aureon whole.</p>
+              <p class="cofounder-coming">Full story coming soon...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About CTA Area -->
+    <div class="about-cta-area">
+      <div class="ai-line-art-visible">
+        <svg viewBox="0 0 1400 400" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="ctaGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:rgba(160,125,63,0.25)"/>
+              <stop offset="50%" style="stop-color:rgba(139,92,246,0.15)"/>
+              <stop offset="100%" style="stop-color:rgba(74,158,255,0.2)"/>
+            </linearGradient>
+            <linearGradient id="ctaGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:rgba(160,125,63,0.2)"/>
+              <stop offset="100%" style="stop-color:rgba(74,158,255,0.15)"/>
+            </linearGradient>
+          </defs>
+          <g class="neural-flow">
+            <circle cx="50" cy="100" r="6" fill="rgba(160,125,63,0.2)" class="pulse-node"/>
+            <circle cx="50" cy="200" r="8" fill="rgba(160,125,63,0.25)" class="pulse-node" style="animation-delay: -1s"/>
+            <circle cx="50" cy="300" r="5" fill="rgba(160,125,63,0.15)" class="pulse-node" style="animation-delay: -2s"/>
+            <circle cx="200" cy="150" r="10" fill="rgba(139,92,246,0.2)" class="pulse-node" style="animation-delay: -0.5s"/>
+            <circle cx="200" cy="280" r="7" fill="rgba(139,92,246,0.15)" class="pulse-node" style="animation-delay: -1.5s"/>
+            <circle cx="400" cy="120" r="8" fill="rgba(74,158,255,0.2)" class="pulse-node" style="animation-delay: -0.8s"/>
+            <circle cx="400" cy="220" r="12" fill="rgba(160,125,63,0.2)" class="pulse-node" style="animation-delay: -1.2s"/>
+            <circle cx="400" cy="320" r="6" fill="rgba(74,158,255,0.15)" class="pulse-node" style="animation-delay: -2.2s"/>
+            <path d="M50,100 Q125,80 200,150" stroke="url(#ctaGradient1)" stroke-width="1.5" fill="none" class="flow-line"/>
+            <path d="M50,200 Q125,170 200,150" stroke="url(#ctaGradient1)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -1s"/>
+            <path d="M50,200 Q125,240 200,280" stroke="url(#ctaGradient1)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -0.5s"/>
+            <path d="M50,300 Q125,290 200,280" stroke="url(#ctaGradient1)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -1.5s"/>
+            <path d="M200,150 Q300,100 400,120" stroke="url(#ctaGradient2)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -0.3s"/>
+            <path d="M200,150 Q300,180 400,220" stroke="url(#ctaGradient2)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -0.8s"/>
+            <path d="M200,280 Q300,250 400,220" stroke="url(#ctaGradient2)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -1.3s"/>
+            <path d="M200,280 Q300,300 400,320" stroke="url(#ctaGradient2)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -1.8s"/>
+            <circle cx="1350" cy="100" r="6" fill="rgba(160,125,63,0.2)" class="pulse-node" style="animation-delay: -0.3s"/>
+            <circle cx="1350" cy="200" r="8" fill="rgba(160,125,63,0.25)" class="pulse-node" style="animation-delay: -1.3s"/>
+            <circle cx="1350" cy="300" r="5" fill="rgba(160,125,63,0.15)" class="pulse-node" style="animation-delay: -2.3s"/>
+            <circle cx="1200" cy="150" r="10" fill="rgba(139,92,246,0.2)" class="pulse-node" style="animation-delay: -0.8s"/>
+            <circle cx="1200" cy="280" r="7" fill="rgba(139,92,246,0.15)" class="pulse-node" style="animation-delay: -1.8s"/>
+            <circle cx="1000" cy="120" r="8" fill="rgba(74,158,255,0.2)" class="pulse-node" style="animation-delay: -1.1s"/>
+            <circle cx="1000" cy="220" r="12" fill="rgba(160,125,63,0.2)" class="pulse-node" style="animation-delay: -1.5s"/>
+            <circle cx="1000" cy="320" r="6" fill="rgba(74,158,255,0.15)" class="pulse-node" style="animation-delay: -2.5s"/>
+            <path d="M1350,100 Q1275,80 1200,150" stroke="url(#ctaGradient1)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -0.2s"/>
+            <path d="M1350,200 Q1275,170 1200,150" stroke="url(#ctaGradient1)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -1.2s"/>
+            <path d="M1350,200 Q1275,240 1200,280" stroke="url(#ctaGradient1)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -0.7s"/>
+            <path d="M1350,300 Q1275,290 1200,280" stroke="url(#ctaGradient1)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -1.7s"/>
+            <path d="M1200,150 Q1100,100 1000,120" stroke="url(#ctaGradient2)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -0.5s"/>
+            <path d="M1200,150 Q1100,180 1000,220" stroke="url(#ctaGradient2)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -1s"/>
+            <path d="M1200,280 Q1100,250 1000,220" stroke="url(#ctaGradient2)" stroke-width="1.5" fill="none" class="flow-line" style="animation-delay: -1.5s"/>
+            <path d="M1200,280 Q1100,300 1000,320" stroke="url(#ctaGradient2)" stroke-width="1" fill="none" class="flow-line" style="animation-delay: -2s"/>
+          </g>
+          <g class="center-decoration">
+            <polygon points="700,140 740,160 740,200 700,220 660,200 660,160" fill="none" stroke="rgba(160,125,63,0.2)" stroke-width="1.5" class="hex-rotate"/>
+            <polygon points="700,150 730,165 730,195 700,210 670,195 670,165" fill="none" stroke="rgba(139,92,246,0.15)" stroke-width="1" class="hex-rotate" style="animation-direction: reverse;"/>
+            <circle cx="700" cy="180" r="15" fill="none" stroke="rgba(160,125,63,0.25)" stroke-width="1" class="pulse-ring"/>
+            <circle cx="700" cy="180" r="8" fill="rgba(160,125,63,0.15)"/>
+            <path d="M400,220 Q550,200 660,180" stroke="rgba(160,125,63,0.15)" stroke-width="1" fill="none" stroke-dasharray="5,5" class="dash-flow"/>
+            <path d="M1000,220 Q850,200 740,180" stroke="rgba(160,125,63,0.15)" stroke-width="1" fill="none" stroke-dasharray="5,5" class="dash-flow" style="animation-delay: -2s"/>
+          </g>
+          <path d="M0,350 Q350,320 700,350 T1400,350" stroke="rgba(160,125,63,0.12)" stroke-width="2" fill="none" class="wave-path"/>
+          <path d="M0,370 Q350,340 700,370 T1400,370" stroke="rgba(74,158,255,0.1)" stroke-width="1.5" fill="none" class="wave-path" style="animation-delay: -1s"/>
+        </svg>
+      </div>
+      <div class="cta-content-wrapper">
+        <div class="cta-icon-wrapper reveal">
+          <div class="cta-icon-ring"></div>
+          <div class="cta-icon">🚀</div>
+        </div>
+        <h3 class="cta-heading reveal reveal-d1">Want to See What We've Built?</h3>
+        <p class="cta-subtext reveal reveal-d2">Experience firsthand how Aureon transforms appointment chaos into automated precision. Your 15-minute demo awaits.</p>
+        <div class="cta-features reveal reveal-d3">
+          <div class="cta-feature">
+            <span class="cta-feature-icon">⚡</span>
+            <span>Quick Setup</span>
+          </div>
+          <div class="cta-feature">
+            <span class="cta-feature-icon">🎯</span>
+            <span>Tailored Demo</span>
+          </div>
+          <div class="cta-feature">
+            <span class="cta-feature-icon">💬</span>
+            <span>Live Q&A</span>
+          </div>
+        </div>
+        <a href="#" class="btn-demo cta-button reveal reveal-d4" onclick="openModal(event)">Book a Demo</a>
+        <p class="cta-note reveal reveal-d5">No credit card required • 15-minute call • See real results</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FINAL CTA SECTION ==================== -->
+  <section id="final-cta" class="section-dark">
+    <canvas class="constellation-canvas" id="cta-canvas"></canvas>
+    <div class="bg-blobs">
+      <div class="bg-blob" style="top:20%; left:20%; width:500px; height:500px; background:radial-gradient(circle,rgba(201,169,110,0.1),transparent 70%);"></div>
+      <div class="bg-blob" style="bottom:20%; right:20%; width:400px; height:400px; background:radial-gradient(circle,rgba(74,158,255,0.08),transparent 70%);"></div>
+    </div>
+    <div class="gold-orb" style="top: 20%; left: 30%;"></div>
+    <div class="gold-orb" style="bottom: 20%; right: 20%;"></div>
+    <div class="container" style="position: relative; z-index: 1;">
+      <h2 class="reveal" style="color: var(--ivory);">Ready to Stop Losing<br>Appointments?</h2>
+      <p class="sub-text reveal reveal-d2" style="text-align: center;">Book a 15-minute demo. See exactly how Aureon would work inside your practice.</p>
+      <div class="hero-ctas reveal reveal-d3">
+        <a href="#" class="btn-demo glow" onclick="openModal(event)">Book Your Demo</a>
+        <a href="#" class="btn-outline" onclick="openContactModal(event)">Contact Us</a>
+      </div>
+      <p class="no-pressure reveal reveal-d4">No commitment. No pressure. Just clarity.</p>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Aureon</div>
+        <p class="footer-tagline">Operational infrastructure for appointment businesses.</p>
+        <p class="footer-copy">© 2026 Aureon. All rights reserved.</p>
+      </div>
+      <div>
+        <div class="footer-links">
+          <a href="#hero">Home</a>
+          <a href="#solution">Solutions</a>
+          <a href="#healthcare">Healthcare</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#about">About</a>
+          <a href="#" onclick="openContactModal(event)">Contact</a>
+        </div>
+      </div>
+      <div class="footer-contact">
+        <h4>Get in Touch</h4>
+        <a href="mailto:aureonops@gmail.com">aureonops@gmail.com</a>
+        <a href="tel:9540165120">9540165120</a>
+        <div class="social-links">
+          <a href="https://www.instagram.com/aureonops/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img src="images/insta.png" alt="Instagram" width="30" height="30">
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <img src="images/link.png" alt="LinkedIn" width="30" height="30">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <a href="#" class="btn-demo" onclick="openModal(event)">Book a Demo</a>
+  </div>
+
+  <!-- Demo Modal -->
+  <div class="modal-overlay" id="demoModal">
+    <div class="modal-card">
+      <div class="modal-glow gold"></div>
+      <div class="modal-glow blue"></div>
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <div id="demoForm">
+        <h3>Book a Demo</h3>
+        <p class="sub">See how Aureon works for your practice in 15 minutes.</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label>Business Name</label>
+            <input type="text" placeholder="Your business">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="you@business.com">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone (optional)</label>
+            <input type="tel" placeholder="+1 (234) 567-890">
+          </div>
+          <div class="form-group">
+            <label>Business Type</label>
+            <select>
+              <option value="">Select...</option>
+              <option>Medical Clinic</option>
+              <option>Dental Practice</option>
+              <option>Med Spa / Aesthetic</option>
+              <option>Wellness / Therapy</option>
+              <option>Salon / Beauty</option>
+              <option>Professional Services</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <a href="#" class="btn-demo form-submit" onclick="submitForm(event)">Submit Request</a>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="check">✓</div>
+        <h3>Request Received</h3>
+        <p>We'll be in touch within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="modal-overlay" id="contactModal">
+    <div class="modal-card">
+      <div class="modal-glow gold"></div>
+      <div class="modal-glow blue"></div>
+      <button class="modal-close" onclick="closeContactModal()">&times;</button>
+      <div id="contactForm">
+        <h3>Contact Us</h3>
+        <p class="sub">Have a question? We'd love to hear from you.</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="you@business.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="How can we help?"></textarea>
+        </div>
+        <a href="#" class="btn-demo form-submit" onclick="submitContact(event)">Send Message</a>
+      </div>
+      <div class="form-success" id="contactSuccess">
+        <div class="check">✓</div>
+        <h3>Message Sent</h3>
+        <p>We'll get back to you within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
